@@ -1,0 +1,1 @@
+data$grade <- factor(data$grade,levels = c("low","high"))

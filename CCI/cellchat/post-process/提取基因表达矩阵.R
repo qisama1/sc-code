@@ -1,0 +1,1 @@
+write.csv(as.matrix(scRNA[genes$X0, ]@assays$RNA@data), )

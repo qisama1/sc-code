@@ -135,4 +135,4 @@ p6=p6+geom_point(aes(color=cell_type),position = position_jitterdodge(),size=1.0
   theme(legend.position = 'none')
 
 p_all = plot_grid(p1, p2, p3, p4, p5, p6, nrow = 1)
-ggsave(filename = "./mmrd_part4.pdf", plot = p_all, device = 'pdf', width = 28, height = 3.5, units = 'in')
+ggsave(filename = "./mmrd_part4.pdf", plot = p_all, device = 'pdf', width = 15, height = 3.5, units = 'in')
