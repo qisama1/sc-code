@@ -9,7 +9,7 @@ library(ggpubr)
 library(ggplot2)
 library(cowplot)
 library(tidyverse)
-library(ggforce)
+
 
 bk <- c(seq(0, max(data), (max(data) - 0) / 200))
  
@@ -65,10 +65,10 @@ heatmap = pheatmap(data,
                     #display_numbers = T,
                     #gaps_row = c(3,6,9,12,15)
                     #gaps_row = 1:length(rownames(data)),
-                    gaps_col = c(1,2,3)
+                    #gaps_col = c(1,2,3)
                     
  )
 
- pdf("/public/home/yuwenqi/sc-data/selected/38/module/percent_corr_heatmap.pdf", width = 25, height = 25)
+ pdf("/public/home/yuwenqi/sc-data/selected/CRC/workspace/CRC1/percent_new/crc_corr_modified.pdf", width = 25, height = 25)
  heatmap
  dev.off()

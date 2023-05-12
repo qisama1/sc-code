@@ -1,0 +1,12 @@
+idxs = ['GC_B', 'Plasma_1', 'Cycling_B', 'IFNy_iCAF', 'CD8Tem_3', 'CD8Tex',
+       'Ap_Epi_1', 'cDC2', 'Arterial', 'Ap_Epi_2', 'Mono_3', 'Mono_1',
+       'CD8Teff_1', 'IL_iCAF', 'NK_2', 'MAFB+Epi', 'Adventitial_CAF',
+       'Angiogenic_1', 'Follicular_B', 'Treg', 'Cycing_End', 'Macro_SPP1_APOE',
+       'NDRG1+Epi', 'Macro_SPP1', 'Wound_myCAF', 'Treg_3', 'pDC1', 'CD8Tem_2',
+       'Macro_CXCL10', 'Mast', 'Angiogenic_2', 'NK_1', 'CD4Tn', 'Mes_Epi',
+       'Detox_iCAF', 'Stress_Epi', 'Ap_Epi_3', 'Ecm_myCAF_2', 'CD8Pro_1',
+       'Cycing_CAF', 'CD8Tem_1', 'CD8Teff_2', 'PCV', 'End_progenitor',
+       'Ecm_myCAF_1', 'Plasma_2', 'Naive_B', 'A2M+Epi', 'RPLP1+Epi', 'Tfh',
+       'Macro_Cycing', 'Th', 'CD8Pro_2', 'Treg_2', 'Cycling_Epi',
+       'Mucosal_Epi', 'mature_cDC', 'cDC1', 'Aactivated_PCV',
+       'Vascular_smooth_muscle', 'Mono_2']

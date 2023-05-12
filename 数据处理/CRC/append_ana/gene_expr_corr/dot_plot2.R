@@ -1,0 +1,16 @@
+data = read.csv("/public/home/yuwenqi/sc-data/selected/append_ana/corr-gene-cell/ESCA/part2_data.csv")
+setwd("/public/home/yuwenqi/sc-data/selected/append_ana/corr-gene-cell/ESCA/esca_dot_plot2/")
+sp1 = ggplot(data, aes(x = Macro_SPP1, y = Epi_ANXA1))
+sp1 = sp1 + geom_point(colour='#F08080') + stat_smooth(method = lm,  colour = 'black', level = 0.99) +
+  stat_cor(method="spearman", size = 2) + 
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(),
+        #axis.text.x = element_text(angle=90,hjust = 1,vjust=0.5),
+        plot.title = element_text(hjust=0.5))+
+    theme_classic() +
+  theme(axis.text = element_text(size = 4), text = element_text(size = 5)) + 
+  xlab("Macro_SPP1") + 
+  ylab('Epi_ANXA1') 
+ggsave("./Macro_SPP1_Epi_ANXA1.pdf", width = 1.5, height =1.5, device = cairo_pdf, units = 'in')
+

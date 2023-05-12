@@ -8,8 +8,6 @@ write.table(as.matrix(scRNA@assays$RNA@data), "/public/home/yuwenqi/sc-data/sele
 
 write.table(as.matrix(cbind(rownames(scRNA@meta.data), scRNA@meta.data[,'ident', drop=F])), "/public/home/yuwenqi/sc-data/selected/9/cellphonedb/meta.txt", sep='\t', quote=F, row.names=F)
 
-nohup python3 -u test.py >test.log 2>&1 &
-
 nohup cellphonedb method statistical_analysis  meta.txt  d.txt     --counts-data=gene_name >test.log 2>&1 &
 nohup cellphonedb method statistical_analysis  \
     meta.txt  \

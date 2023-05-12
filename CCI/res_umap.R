@@ -28,6 +28,7 @@ ligandSub = End
 recvSub = TNK
 
 p1 = FeaturePlot(scRNA, reduction = "umap", features = c('SELL', 'CD34'), label = T)
+
 ggsave("/public/home/yuwenqi/sc-data/selected/Breast/workspace2/BC3-CCI/cci_umap/CD8Teff/SELL-CD34.pdf", plot=p1, device='pdf', width=10, height=5)
 
 p1 = FeaturePlot(ligandSub, reduction = "umap", features = c('TNFSF13B'), label = T, label.size = 4, repel = T)

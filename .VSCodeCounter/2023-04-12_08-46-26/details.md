@@ -1,0 +1,150 @@
+# Details
+
+Date : 2023-04-12 08:46:26
+
+Directory d:\\研究生\\singleCell\\workspace\\code-summary
+
+Total : 135 files,  7459 codes, 111 comments, 1661 blanks, all 9231 lines
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [CCI/cellchat/post-process/分离P和V.py](/CCI/cellchat/post-process/%E5%88%86%E7%A6%BBP%E5%92%8CV.py) | Python | 8 | 0 | 3 | 11 |
+| [CCI/module/module-score.py](/CCI/module/module-score.py) | Python | 33 | 0 | 5 | 38 |
+| [CCI/module/module_cellpercent_score.py](/CCI/module/module_cellpercent_score.py) | Python | 75 | 2 | 6 | 83 |
+| [CCI/module/module_gene_score.py](/CCI/module/module_gene_score.py) | Python | 52 | 4 | 11 | 67 |
+| [CCI/process/module_split.py](/CCI/process/module_split.py) | Python | 21 | 0 | 3 | 24 |
+| [CCI/process/spearman_select.py](/CCI/process/spearman_select.py) | Python | 52 | 1 | 6 | 59 |
+| [CCI/select.py](/CCI/select.py) | Python | 19 | 3 | 16 | 38 |
+| [CCI/selected_pipe.py](/CCI/selected_pipe.py) | Python | 0 | 0 | 1 | 1 |
+| [CCI/属于每个大类的细胞比例.py](/CCI/%E5%B1%9E%E4%BA%8E%E6%AF%8F%E4%B8%AA%E5%A4%A7%E7%B1%BB%E7%9A%84%E7%BB%86%E8%83%9E%E6%AF%94%E4%BE%8B.py) | Python | 35 | 4 | 8 | 47 |
+| [CCI/网络图-按模块.md](/CCI/%E7%BD%91%E7%BB%9C%E5%9B%BE-%E6%8C%89%E6%A8%A1%E5%9D%97.md) | Markdown | 57 | 0 | 8 | 65 |
+| [CCI/网络图.md](/CCI/%E7%BD%91%E7%BB%9C%E5%9B%BE.md) | Markdown | 37 | 0 | 4 | 41 |
+| [cell_percent/apoe_percent.py](/cell_percent/apoe_percent.py) | Python | 52 | 4 | 4 | 60 |
+| [diff_compare/Macro_SPP1.r](/diff_compare/Macro_SPP1.r) | R | 75 | 13 | 6 | 94 |
+| [gene_percent_corr/details/details.py](/gene_percent_corr/details/details.py) | Python | 71 | 12 | 26 | 109 |
+| [gene_percent_corr/percent.py](/gene_percent_corr/percent.py) | Python | 14 | 2 | 5 | 21 |
+| [monocle/monocle-bug.md](/monocle/monocle-bug.md) | Markdown | 128 | 0 | 4 | 132 |
+| [plot/散点图/module.r](/plot/%E6%95%A3%E7%82%B9%E5%9B%BE/module.r) | R | 58 | 8 | 12 | 78 |
+| [plot/箱线图/readme.md](/plot/%E7%AE%B1%E7%BA%BF%E5%9B%BE/readme.md) | Markdown | 0 | 0 | 1 | 1 |
+| [ssgsea/corr.md](/ssgsea/corr.md) | Markdown | 12 | 0 | 0 | 12 |
+| [数据处理/BRCA/CCI/cellphonedb.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/CCI/cellphonedb.md) | Markdown | 54 | 0 | 10 | 64 |
+| [数据处理/BRCA/CCI/数据处理步骤.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/CCI/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%AD%A5%E9%AA%A4.md) | Markdown | 8 | 0 | 0 | 8 |
+| [数据处理/BRCA/CCI_an_sheet/pathway_diff_boxplot/pathway_diff.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/CCI_an_sheet/pathway_diff_boxplot/pathway_diff.py) | Python | 20 | 0 | 8 | 28 |
+| [数据处理/BRCA/CCI_an_sheet/pathway_t_corr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/CCI_an_sheet/pathway_t_corr.md) | Markdown | 67 | 0 | 8 | 75 |
+| [数据处理/BRCA/CCI_an_sheet/气泡图.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/CCI_an_sheet/%E6%B0%94%E6%B3%A1%E5%9B%BE.md) | Markdown | 75 | 0 | 13 | 88 |
+| [数据处理/BRCA/CCI_res/t-1-tcga.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/CCI_res/t-1-tcga.md) | Markdown | 119 | 0 | 35 | 154 |
+| [数据处理/BRCA/CCI_res/t-4-gene-diff.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/CCI_res/t-4-gene-diff.md) | Markdown | 89 | 0 | 27 | 116 |
+| [数据处理/BRCA/CCI_res/t-target/t-target-an-gene.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/CCI_res/t-target/t-target-an-gene.md) | Markdown | 142 | 0 | 38 | 180 |
+| [数据处理/BRCA/CCI_res/t-target/t-target-an-tcga.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/CCI_res/t-target/t-target-an-tcga.md) | Markdown | 115 | 0 | 36 | 151 |
+| [数据处理/BRCA/TCGA.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/TCGA.py) | Python | 69 | 10 | 20 | 99 |
+| [数据处理/BRCA/append_ana/gene_expr_corr/expr_diff.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/append_ana/gene_expr_corr/expr_diff.md) | Markdown | 5 | 0 | 0 | 5 |
+| [数据处理/BRCA/append_ana/gene_expr_corr/gene_expr_corr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/append_ana/gene_expr_corr/gene_expr_corr.md) | Markdown | 90 | 0 | 12 | 102 |
+| [数据处理/BRCA/append_ana/t-target-an-tcga.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/append_ana/t-target-an-tcga.md) | Markdown | 111 | 0 | 39 | 150 |
+| [数据处理/BRCA/end/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/end/score.md) | Markdown | 20 | 0 | 4 | 24 |
+| [数据处理/BRCA/epi/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/epi/score.md) | Markdown | 20 | 0 | 4 | 24 |
+| [数据处理/BRCA/fib/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/fib/score.md) | Markdown | 20 | 0 | 4 | 24 |
+| [数据处理/BRCA/gsva/gsva.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/gsva/gsva.py) | Python | 10 | 0 | 4 | 14 |
+| [数据处理/BRCA/mye/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/mye/score.md) | Markdown | 18 | 0 | 3 | 21 |
+| [数据处理/BRCA/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/score.md) | Markdown | 113 | 0 | 16 | 129 |
+| [数据处理/BRCA/subTME_heatmap/gene_expr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/subTME_heatmap/gene_expr.md) | Markdown | 80 | 0 | 14 | 94 |
+| [数据处理/BRCA/tnk/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/tnk/score.md) | Markdown | 18 | 0 | 3 | 21 |
+| [数据处理/BRCA/合并&细胞比例.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/%E5%90%88%E5%B9%B6&%E7%BB%86%E8%83%9E%E6%AF%94%E4%BE%8B.py) | Python | 41 | 5 | 11 | 57 |
+| [数据处理/BRCA/生存分析.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/BRCA/%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.md) | Markdown | 143 | 0 | 25 | 168 |
+| [数据处理/CRC/CCI/cellphonedb.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/CCI/cellphonedb.md) | Markdown | 55 | 0 | 11 | 66 |
+| [数据处理/CRC/CCI/数据处理步骤.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/CCI/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%AD%A5%E9%AA%A4.md) | Markdown | 8 | 0 | 0 | 8 |
+| [数据处理/CRC/CCI_an_sheet/pathway_diff_boxplot/pathway_diff.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/CCI_an_sheet/pathway_diff_boxplot/pathway_diff.py) | Python | 21 | 0 | 8 | 29 |
+| [数据处理/CRC/CCI_an_sheet/pathway_t_corr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/CCI_an_sheet/pathway_t_corr.md) | Markdown | 78 | 0 | 7 | 85 |
+| [数据处理/CRC/CCI_an_sheet/气泡图.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/CCI_an_sheet/%E6%B0%94%E6%B3%A1%E5%9B%BE.md) | Markdown | 75 | 0 | 12 | 87 |
+| [数据处理/CRC/CCI_res/t-1-tcga.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/CCI_res/t-1-tcga.md) | Markdown | 130 | 0 | 36 | 166 |
+| [数据处理/CRC/CCI_res/t-4-gene_diff.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/CCI_res/t-4-gene_diff.md) | Markdown | 128 | 0 | 41 | 169 |
+| [数据处理/CRC/CCI_res/t-target/t-target-an-gene.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/CCI_res/t-target/t-target-an-gene.md) | Markdown | 142 | 0 | 38 | 180 |
+| [数据处理/CRC/CCI_res/t-target/t-target-an-tcga.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/CCI_res/t-target/t-target-an-tcga.md) | Markdown | 111 | 0 | 36 | 147 |
+| [数据处理/CRC/CCI_res/获得需要的基因.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/CCI_res/%E8%8E%B7%E5%BE%97%E9%9C%80%E8%A6%81%E7%9A%84%E5%9F%BA%E5%9B%A0.py) | Python | 18 | 0 | 4 | 22 |
+| [数据处理/CRC/TCGA.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/TCGA.py) | Python | 78 | 13 | 24 | 115 |
+| [数据处理/CRC/append_ana/gene_expr_corr/expr_diff.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/append_ana/gene_expr_corr/expr_diff.md) | Markdown | 5 | 0 | 1 | 6 |
+| [数据处理/CRC/append_ana/gene_expr_corr/gene_expr_corr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/append_ana/gene_expr_corr/gene_expr_corr.md) | Markdown | 93 | 0 | 10 | 103 |
+| [数据处理/CRC/append_ana/t-target-an-tcga.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/append_ana/t-target-an-tcga.md) | Markdown | 97 | 0 | 36 | 133 |
+| [数据处理/CRC/end/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/end/score.md) | Markdown | 19 | 0 | 3 | 22 |
+| [数据处理/CRC/epi/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/epi/score.md) | Markdown | 19 | 0 | 3 | 22 |
+| [数据处理/CRC/fib/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/fib/score.md) | Markdown | 19 | 0 | 3 | 22 |
+| [数据处理/CRC/gsva/gsva.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/gsva/gsva.py) | Python | 10 | 0 | 4 | 14 |
+| [数据处理/CRC/mye/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/mye/score.md) | Markdown | 62 | 0 | 9 | 71 |
+| [数据处理/CRC/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/score.md) | Markdown | 112 | 0 | 16 | 128 |
+| [数据处理/CRC/subTME_heatmap/gene_expr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/subTME_heatmap/gene_expr.md) | Markdown | 70 | 0 | 11 | 81 |
+| [数据处理/CRC/tnk/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/tnk/score.md) | Markdown | 19 | 0 | 3 | 22 |
+| [数据处理/CRC/属于每个大类的细胞比例.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/%E5%B1%9E%E4%BA%8E%E6%AF%8F%E4%B8%AA%E5%A4%A7%E7%B1%BB%E7%9A%84%E7%BB%86%E8%83%9E%E6%AF%94%E4%BE%8B.py) | Python | 49 | 7 | 12 | 68 |
+| [数据处理/CRC/生存分析.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/CRC/%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.md) | Markdown | 122 | 0 | 22 | 144 |
+| [数据处理/ESCA/10/b/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/10/b/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/ESCA/10/end/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/10/end/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/ESCA/10/epi/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/10/epi/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/ESCA/10/fib/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/10/fib/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/ESCA/10/mye/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/10/mye/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/ESCA/10/tnk/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/10/tnk/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/ESCA/9/CCI/cellphonedb.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/9/CCI/cellphonedb.md) | Markdown | 54 | 0 | 10 | 64 |
+| [数据处理/ESCA/9/CCI/数据处理步骤.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/9/CCI/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%AD%A5%E9%AA%A4.md) | Markdown | 8 | 0 | 0 | 8 |
+| [数据处理/ESCA/9/b/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/9/b/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/ESCA/9/end/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/9/end/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/ESCA/9/epi/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/9/epi/score.md) | Markdown | 17 | 0 | 4 | 21 |
+| [数据处理/ESCA/9/fib/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/9/fib/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/ESCA/9/mye/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/9/mye/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/ESCA/9/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/9/score.md) | Markdown | 99 | 0 | 11 | 110 |
+| [数据处理/ESCA/9/tnk/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/9/tnk/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/ESCA/CCI_an_sheet/pathway_diff_boxplot/pathway_diff.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/CCI_an_sheet/pathway_diff_boxplot/pathway_diff.py) | Python | 20 | 0 | 8 | 28 |
+| [数据处理/ESCA/CCI_an_sheet/pathway_t_corr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/CCI_an_sheet/pathway_t_corr.md) | Markdown | 78 | 0 | 7 | 85 |
+| [数据处理/ESCA/CCI_an_sheet/气泡图.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/CCI_an_sheet/%E6%B0%94%E6%B3%A1%E5%9B%BE.md) | Markdown | 75 | 0 | 12 | 87 |
+| [数据处理/ESCA/CCI_res/t-1-tcga_gene.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/CCI_res/t-1-tcga_gene.md) | Markdown | 204 | 0 | 61 | 265 |
+| [数据处理/ESCA/CCI_res/t-4-gene.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/CCI_res/t-4-gene.md) | Markdown | 130 | 0 | 41 | 171 |
+| [数据处理/ESCA/CCI_res/t-target/t-target-an-gene.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/CCI_res/t-target/t-target-an-gene.md) | Markdown | 141 | 0 | 38 | 179 |
+| [数据处理/ESCA/CCI_res/t-target/t-target-an-tcga.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/CCI_res/t-target/t-target-an-tcga.md) | Markdown | 170 | 0 | 61 | 231 |
+| [数据处理/ESCA/CCI_res/获得需要的基因.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/CCI_res/%E8%8E%B7%E5%BE%97%E9%9C%80%E8%A6%81%E7%9A%84%E5%9F%BA%E5%9B%A0.py) | Python | 19 | 0 | 6 | 25 |
+| [数据处理/ESCA/TCGA.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/TCGA.py) | Python | 72 | 6 | 16 | 94 |
+| [数据处理/ESCA/append_ana/gene_expr_corr/expr_diff.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/append_ana/gene_expr_corr/expr_diff.md) | Markdown | 5 | 0 | 0 | 5 |
+| [数据处理/ESCA/append_ana/gene_expr_corr/gene_expr_corr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/append_ana/gene_expr_corr/gene_expr_corr.md) | Markdown | 89 | 0 | 12 | 101 |
+| [数据处理/ESCA/append_ana/t-target-an-tcga.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/append_ana/t-target-an-tcga.md) | Markdown | 93 | 0 | 38 | 131 |
+| [数据处理/ESCA/gsva/gsva.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/gsva/gsva.py) | Python | 10 | 0 | 4 | 14 |
+| [数据处理/ESCA/subTME_heatmap copy/gene_expr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/subTME_heatmap%20copy/gene_expr.md) | Markdown | 68 | 0 | 10 | 78 |
+| [数据处理/ESCA/生存分析.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/ESCA/%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.md) | Markdown | 123 | 0 | 22 | 145 |
+| [数据处理/PDAC/35/CCI/cellphonedb.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/35/CCI/cellphonedb.md) | Markdown | 54 | 0 | 10 | 64 |
+| [数据处理/PDAC/35/CCI/数据处理步骤.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/35/CCI/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%AD%A5%E9%AA%A4.md) | Markdown | 8 | 0 | 0 | 8 |
+| [数据处理/PDAC/35/b/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/35/b/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/35/end/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/35/end/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/35/epi/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/35/epi/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/35/fib/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/35/fib/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/35/mye/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/35/mye/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/35/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/35/score.md) | Markdown | 107 | 0 | 12 | 119 |
+| [数据处理/PDAC/35/tnk/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/35/tnk/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/35/更改meta.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/35/%E6%9B%B4%E6%94%B9meta.py) | Python | 43 | 0 | 3 | 46 |
+| [数据处理/PDAC/37/epi/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/37/epi/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/37/fib/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/37/fib/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/37/mye/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/37/mye/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/37/tnk/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/37/tnk/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/37/属于每个大类的细胞比例.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/37/%E5%B1%9E%E4%BA%8E%E6%AF%8F%E4%B8%AA%E5%A4%A7%E7%B1%BB%E7%9A%84%E7%BB%86%E8%83%9E%E6%AF%94%E4%BE%8B.py) | Python | 35 | 4 | 8 | 47 |
+| [数据处理/PDAC/38/b/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/38/b/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/38/epi/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/38/epi/score.md) | Markdown | 17 | 0 | 3 | 20 |
+| [数据处理/PDAC/38/mye/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/38/mye/score.md) | Markdown | 75 | 0 | 17 | 92 |
+| [数据处理/PDAC/38/tnk/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/38/tnk/score.md) | Markdown | 72 | 0 | 17 | 89 |
+| [数据处理/PDAC/38/属于每个大类的细胞比例.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/38/%E5%B1%9E%E4%BA%8E%E6%AF%8F%E4%B8%AA%E5%A4%A7%E7%B1%BB%E7%9A%84%E7%BB%86%E8%83%9E%E6%AF%94%E4%BE%8B.py) | Python | 34 | 4 | 8 | 46 |
+| [数据处理/PDAC/CCI_an_sheet/pathway_diff_boxplot/pathway_diff.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/CCI_an_sheet/pathway_diff_boxplot/pathway_diff.py) | Python | 20 | 0 | 9 | 29 |
+| [数据处理/PDAC/CCI_an_sheet/pathway_t_corr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/CCI_an_sheet/pathway_t_corr.md) | Markdown | 68 | 0 | 6 | 74 |
+| [数据处理/PDAC/CCI_an_sheet/气泡图.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/CCI_an_sheet/%E6%B0%94%E6%B3%A1%E5%9B%BE.md) | Markdown | 75 | 0 | 12 | 87 |
+| [数据处理/PDAC/CCI_res/t-1-tcga.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/CCI_res/t-1-tcga.md) | Markdown | 201 | 0 | 61 | 262 |
+| [数据处理/PDAC/CCI_res/t-4-gene.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/CCI_res/t-4-gene.md) | Markdown | 106 | 0 | 31 | 137 |
+| [数据处理/PDAC/CCI_res/t-target/t-target-an-gene.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/CCI_res/t-target/t-target-an-gene.md) | Markdown | 117 | 0 | 28 | 145 |
+| [数据处理/PDAC/CCI_res/t-target/t-target-an-tcga.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/CCI_res/t-target/t-target-an-tcga.md) | Markdown | 169 | 0 | 60 | 229 |
+| [数据处理/PDAC/CCI_res/获得需要的基因.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/CCI_res/%E8%8E%B7%E5%BE%97%E9%9C%80%E8%A6%81%E7%9A%84%E5%9F%BA%E5%9B%A0.py) | Python | 21 | 0 | 6 | 27 |
+| [数据处理/PDAC/TCGA.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/TCGA.py) | Python | 84 | 5 | 17 | 106 |
+| [数据处理/PDAC/append_ana/gene_expr_corr/expr_diff.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/append_ana/gene_expr_corr/expr_diff.md) | Markdown | 5 | 0 | 1 | 6 |
+| [数据处理/PDAC/append_ana/gene_expr_corr/gene_expr_corr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/append_ana/gene_expr_corr/gene_expr_corr.md) | Markdown | 94 | 0 | 10 | 104 |
+| [数据处理/PDAC/append_ana/t-target-an-tcga.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/append_ana/t-target-an-tcga.md) | Markdown | 93 | 0 | 38 | 131 |
+| [数据处理/PDAC/gsva/gsea.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/gsva/gsea.py) | Python | 10 | 0 | 4 | 14 |
+| [数据处理/PDAC/gsva/gsva.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/gsva/gsva.py) | Python | 10 | 0 | 4 | 14 |
+| [数据处理/PDAC/subTME_heatmap copy/gene_expr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/subTME_heatmap%20copy/gene_expr.md) | Markdown | 68 | 0 | 10 | 78 |
+| [数据处理/PDAC/subTME_heatmap/gene_expr.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/subTME_heatmap/gene_expr.md) | Markdown | 6 | 0 | 1 | 7 |
+| [数据处理/PDAC/生存分析.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/PDAC/%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90.md) | Markdown | 143 | 0 | 25 | 168 |
+| [数据处理/分数计算/score.md](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/%E5%88%86%E6%95%B0%E8%AE%A1%E7%AE%97/score.md) | Markdown | 55 | 0 | 12 | 67 |
+| [数据处理/属于每个大类的细胞比例.py](/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/%E5%B1%9E%E4%BA%8E%E6%AF%8F%E4%B8%AA%E5%A4%A7%E7%B1%BB%E7%9A%84%E7%BB%86%E8%83%9E%E6%AF%94%E4%BE%8B.py) | Python | 34 | 4 | 8 | 46 |
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)

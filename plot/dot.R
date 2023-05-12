@@ -1,7 +1,5 @@
 # 散点图
-data = read.csv("")
-Treg APOE.CTSZ.TAM
-APOE
+data = read.csv("/public/home/yuwenqi/sc-data/selected/append_ana/corr-gene-cell/CRC/part1_data.csv")
 sp1 = ggplot(data, aes(x = APOE, y = HIF1A))
 sp1 = sp1 + geom_point(colour='#F08080') + stat_smooth(method = lm,  colour = 'black', level = 0.99) +
   stat_cor(method="spearman") + 

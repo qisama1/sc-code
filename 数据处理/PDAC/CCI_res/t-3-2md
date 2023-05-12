@@ -1,0 +1,72 @@
+```R
+library(ggsci)
+library(ggplot2)
+library(cowplot)
+library(data.table)
+library(ggplot2)
+library(ggprism)
+library(RColorBrewer)
+library(ggpubr)
+library(ggplot2)
+library(cowplot)
+library(tidyverse)
+library(qs)
+
+scRNA = qread("/public/home/yuwenqi/sc-data/selected/35/all2.qs")
+meta = read.csv("/public/home/yuwenqi/sc-data/selected/Breast/workspace2/BC3-CCI/module/bc3_meta_all2.csv", row.names=1)
+scRNA = scRNA[, rownames(meta)]
+scRNA[['ident']] =  meta$sub_cluster
+Idents(scRNA) = scRNA$ident
+Epi = subset(scRNA, subset = cluster == 'Epi')
+Mye = subset(scRNA, subset = cluster == 'Mye')
+TNK = subset(scRNA, subset = cluster == 'T/NK')
+Fib = subset(scRNA, subset = cluster == 'Fib')
+End = subset(scRNA, subset = cluster == 'End')
+# Idents(scRNA) =  meta$cluster
+#Epi = subset(Epi, Tissue == 'Tumor')
+#Mye = subset(Mye, Tissue == 'Tumor')
+#TNK = subset(TNK, Tissue == 'Tumor')
+#Fib = subset(Fib, Tissue == 'Tumor')
+#End = subset(End, Tissue == 'Tumor')
+setwd("/public/home/yuwenqi/sc-data/selected/Breast/workspace2/BC3-CCI/module/module/result/umap_res_heatmap/")
+gene1 = 'FN1'
+gene2 = 'CD44'
+path = paste0("./", gene1, "-", gene2)
+if (!dir.exists(path)) {
+    dir.create(path)
+}
+p1 = FeaturePlot(scRNA, reduction = "umap", features = c(gene1))
+p2 = FeaturePlot(scRNA, reduction = "umap", features = c(gene2))
+p3 <- DimPlot(scRNA, reduction = "umap", group.by = "cluster",   pt.size=0.5, label = TRUE,repel = TRUE)
+ggsave(paste0(path, "/", gene1 , "-", gene2, "_major.pdf"), plot=plot_grid(p1, p2, p3, nrow = 1), device='pdf', width=15, height=5)
+
+p1 = FeaturePlot(Epi, reduction = "umap", features = c(gene1))
+p2 = FeaturePlot(Epi, reduction = "umap", features = c(gene2))
+p3 <- DimPlot(Epi, reduction = "umap", group.by = "ident",   pt.size=0.5, label = TRUE,repel = TRUE)
+ggsave(paste0(path, "/", gene1 , "-", gene2, "_Epi.pdf"), plot=plot_grid(p1, p2, p3, nrow = 1), device='pdf', width=15, height=5)
+
+p1 = FeaturePlot(End, reduction = "umap", features = c(gene1))
+p2 = FeaturePlot(End, reduction = "umap", features = c(gene2))
+p3 <- DimPlot(End, reduction = "umap", group.by = "ident",   pt.size=0.5, label = TRUE,repel = TRUE)
+ggsave(paste0(path, "/", gene1 , "-", gene2, "_End.pdf"), plot=plot_grid(p1, p2, p3, nrow = 1), device='pdf', width=15, height=5)
+
+p1 = FeaturePlot(TNK, reduction = "umap", features = c(gene1))
+p2 = FeaturePlot(TNK, reduction = "umap", features = c(gene2))
+p3 <- DimPlot(TNK, reduction = "umap", group.by = "ident",   pt.size=0.5, label = TRUE,repel = TRUE)
+ggsave(paste0(path, "/", gene1 , "-", gene2, "_TNK.pdf"), plot=plot_grid(p1, p2, p3, nrow = 1), device='pdf', width=15, height=5)
+
+p1 = FeaturePlot(Mye, reduction = "umap", features = c(gene1))
+p2 = FeaturePlot(Mye, reduction = "umap", features = c(gene2))
+p3 <- DimPlot(Mye, reduction = "umap", group.by = "ident",   pt.size=0.5, label = TRUE,repel = TRUE)
+ggsave(paste0(path, "/", gene1 , "-", gene2, "_Mye.pdf"), plot=plot_grid(p1, p2, p3, nrow = 1), device='pdf', width=15, height=5)
+
+p1 = FeaturePlot(Fib, reduction = "umap", features = c(gene1))
+p2 = FeaturePlot(Fib, reduction = "umap", features = c(gene2))
+p3 <- DimPlot(Fib, reduction = "umap", group.by = "ident",   pt.size=0.5, label = TRUE,repel = TRUE)
+ggsave(paste0(path, "/", gene1 , "-", gene2, "_Fib.pdf"), plot=plot_grid(p1, p2, p3, nrow = 1), device='pdf', width=15, height=5)
+
+# 补充画图
+p1 = FeaturePlot(plot_clu, reduction = "umap", features = c('CXCR3', 'CD28'), label = T, label.size = 4, repel = T)
+ggsave("/public/home/yuwenqi/sc-data/selected/Breast/workspace2/BC3-CCI/cci_umap/sup/Treg.pdf", plot=p1, device='pdf', width=10, height=5)
+
+```
