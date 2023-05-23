@@ -69,6 +69,6 @@ heatmap = pheatmap(data,
                     
  )
 
- pdf("/public/home/yuwenqi/sc-data/selected/CRC/workspace/CRC1/percent_new/crc_corr_modified.pdf", width = 25, height = 25)
+ pdf("/public/home/yuwenqi/sc-data/selected/19/percent/percent_heatmap/percent_corr_19.pdf", width = 35, height = 35)
  heatmap
  dev.off()

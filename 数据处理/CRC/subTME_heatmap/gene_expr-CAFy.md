@@ -2,13 +2,13 @@
 
 ```R
 scRNA = qread("/public/home/yuwenqi/sc-data/selected/CRC/workspace/CRC1/crc1_used.qs")
-gene = read.csv("/public/home/yuwenqi/sc-data/selected/subTME_heatmap/gene_needed.csv")
-write.csv(as.matrix(scRNA[gene$gene, ]@assays$RNA@data), "/public/home/yuwenqi/sc-data/selected/subTME_heatmap/CRC/gene_df.csv")
+gene = read.csv("/public/home/yuwenqi/sc-data/selected/append_ana/subTME_heatmap/crc/an_pair.csv")
+write.csv(as.matrix(scRNA[gene$gene, ]@assays$RNA@data), "/public/home/yuwenqi/sc-data/selected/append_ana/subTME_heatmap/crc/gene_df.csv")
 ```
 
 ```py
 # 1. 获取每行，然后判断类型，做一个简单的if/else即可，对于不同的类型对应不同的细胞类型的group
-data = pd.read_csv("/public/home/yuwenqi/sc-data/selected/subTME_heatmap/CRC/gene_df.csv", index_col = 0).T
+data = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/subTME_heatmap/crc/gene_df.csv", index_col = 0).T
 meta = pd.read_csv("/public/home/yuwenqi/sc-data/selected/CRC/workspace/CRC1/all3.csv", index_col=0)
 meta.loc[meta.index.str.split('_').str[1] == 'N', 'orig.ident'] = meta['orig.ident'] + '_n'
 data = data.loc[meta.index, ]
@@ -27,6 +27,8 @@ gsva_t = pd.read_csv("/public/home/yuwenqi/sc-data/selected/CRC/workspace/module
 gsva_all = pd.read_csv("/public/home/yuwenqi/sc-data/selected/CRC/workspace/module/module/cci_an_sheet/gsva/all.csv", index_col = 0).T
 gsva_mye = pd.read_csv("/public/home/yuwenqi/sc-data/selected/CRC/workspace/module/module/cci_an_sheet/gsva/mye.csv", index_col = 0).T
 gsva_fib = pd.read_csv("/public/home/yuwenqi/sc-data/selected/CRC/workspace/module/module/cci_an_sheet/gsva/caf.csv", index_col = 0).T
+gsva_epi = pd.read_csv("/public/home/yuwenqi/sc-data/selected/CRC/workspace/module/module/cci_an_sheet/gsva/epi.csv", index_col = 0).T
+gsva_end = pd.read_csv("/public/home/yuwenqi/sc-data/selected/CRC/workspace/module/module/cci_an_sheet/gsva/end.csv", index_col = 0).T
 
 gsva_fib['sample'] = meta['orig.ident']
 major = meta.loc[meta.cluster == 'Fib']
@@ -43,9 +45,14 @@ major = meta.loc[meta.cluster == 'Epi']
 p = pd.DataFrame(gsva_all.loc[gsva_all.index.isin(major.index)].groupby('sample').mean().loc[:, ])
 basic_res = pd.concat([basic_res, p], axis=1)
 
-gsva_t['sample'] = meta['orig.ident']
-major = meta.loc[meta.sub_cluster.str.contains('CD8')]
-p = pd.DataFrame(gsva_t.loc[gsva_t.index.isin(major.index)].groupby('sample').mean().loc[:, 'Exhausted'])
+gsva_epi['sample'] = meta['orig.ident']
+major = meta.loc[meta.cluster == 'Epi']
+p = pd.DataFrame(gsva_epi.loc[gsva_epi.index.isin(major.index)].groupby('sample').mean().loc[:, ['pEMT']])
+basic_res = pd.concat([basic_res, p], axis=1)
+
+gsva_end['sample'] = meta['orig.ident']
+major = meta.loc[meta.cluster == 'End']
+p = pd.DataFrame(gsva_end.loc[gsva_end.index.isin(major.index)].groupby('sample').mean().loc[:, ['angiogenic EC']])
 basic_res = pd.concat([basic_res, p], axis=1)
 
 
@@ -53,38 +60,47 @@ basic_res = pd.concat([basic_res, p], axis=1)
 for i in gene_used.index:
     v = gene_used.iloc[i, ]
     g = v.gene
+    if (g not in data.columns):
+        continue
     if (v.type == 'TAM'):
         major = meta.loc[data.loc[data.sub_cluster.str.contains('Macro')].index,]
         p = pd.DataFrame(data.loc[data.index.isin(major.index)].groupby('sample').mean().loc[:, g])
+        p.columns = ["TAM_" + g]
         basic_res = pd.concat([basic_res, p], axis=1)
     if (v.type == 'CD8+T'):
         major = meta.loc[data.loc[data.sub_cluster.str.contains('CD8')].index,]
         p = pd.DataFrame(data.loc[data.index.isin(major.index)].groupby('sample').mean().loc[:, g])
+        p.columns = ["CD8_" + g]
+        basic_res = pd.concat([basic_res, p], axis=1)
+    if (v.type == 'Treg'):
+        major = meta.loc[data.loc[data.sub_cluster.str.contains('Treg')].index,]
+        p = pd.DataFrame(data.loc[data.index.isin(major.index)].groupby('sample').mean().loc[:, g])
+        p.columns = ["Treg_" + g]
         basic_res = pd.concat([basic_res, p], axis=1)
     if (v.type == 'Epi'):
         major = meta.loc[meta.cluster == 'Epi']
         p = pd.DataFrame(data.loc[data.index.isin(major.index)].groupby('sample').mean().loc[:, g])
+        p.columns = ["Epi_" + g]
         basic_res = pd.concat([basic_res, p], axis=1)
     if (v.type == 'CAF'):
         major = meta.loc[meta.cluster == 'Fib']
         p = pd.DataFrame(data.loc[data.index.isin(major.index)].groupby('sample').mean().loc[:, g])
+        p.columns = ["CAF_" + g]
         basic_res = pd.concat([basic_res, p], axis=1)
+
 basic_res = basic_res.fillna(0)
-basic_res = basic_res.loc[basic_res.sort_values('subTME_1',ascending=False).index,].T
+basic_res = basic_res.loc[basic_res.sort_values('subTME1',ascending=False).index,].T
 
-idxs =  ['subTME_1', 'M1_Macrophage_Polarization', 'M2_Macrophage_Polarization',
-       'Pro_inflammatory_Mye', 'Anti-inflammatory (Mye)', 'Exhausted',
-       'Proliferation', 'ITGAM', 'ITGAX', 'ITGA6', 'INSR', 'CD36', 'TMEM219',
-       'TNFSF13B', 'ARF1', 'MRC1', 'ITGB2', 'ITGB1', 'THBS1', 'CD40', 'PLD2',
-       'PTPRC', 'LRP1', 'FPR1', 'FPR3', 'PLAUR', 'NECTIN2', 'CXCL8', 'SPP1',
-       'C5AR1', 'CCL4', 'CCL3', 'CD47', 'TIMP1', 'C5AR1.1', 'TMEM219.1',
-       'PTGER4', 'SIRPA', 'RPS19', 'CSF1', 'TIGIT', 'NR3C1', 'SDC1', 'ITGA2',
-       'ITGA3', 'ITGB1.1', 'ITGB1.2', 'IGFBP3', 'RPS19.1', 'SLC7A1', 'IDE',
-       'FGFR2', 'RPS19.2', 'MDK', 'ANXA1', 'PLAU', 'THBS1.1', 'COL1A1',
-       'COL1A2', 'COL6A3', 'COL6A2', 'COL1A1.1', 'COL1A1.2', 'THY1', 'LAMC1',
-       'LAMB1', 'NAMPT', 'IGFBP3.1']
-
+idxs =  ['subTME-IS', 'myCAF', 'Proliferation', 'pEMT', 'angiogenic EC',
+       'CAF_COL1A1', 'CAF_COL1A2', 'CAF_COL6A1', 'CAF_COL6A2', 'CAF_COL6A3',
+       'CAF_FN1', 'CAF_LAMA4', 'CAF_LAMB1', 'CAF_LAMC1', 'CAF_NAMPT',
+       'CAF_THBS1', 'CAF_THBS2', 'CAF_THY1', 'Epi_ITGA2', 'Epi_ITGA3',
+       'Epi_ITGB1', 'Epi_SDC1', 'Epi_SDC4', 'TAM_ITGA6', 'TAM_ITGAM',
+       'TAM_ITGAX', 'TAM_ITGB1', 'TAM_ITGB2']
 basic_res.index = idxs
+
 import sklearn.preprocessing as preprocessing
 res = pd.DataFrame(preprocessing.scale(basic_res, axis=1), index = basic_res.index, columns=basic_res.columns)
+
+pd.read_csv("/public/home/yuwenqi/sc-data/selected/CRC/workspace/module/cluster_sg_gene_score/s_celltype_res_type.csv", index_col = 0)['type'].to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/subTME-heatmap-TAM-cancer/crc/an.csv")
 ```

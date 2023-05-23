@@ -1,13 +1,15 @@
-data = read.csv("/public/home/yuwenqi/sc-data/selected/subTME_heatmap/ESCA/heatmap.csv", row.names=1)
-an = read.csv("/public/home/yuwenqi/sc-data/selected/subTME_heatmap/ESCA/an.csv", row.names = 1)
+data = read.csv("/public/home/yuwenqi/sc-data/selected/append_ana/subTME-heatmap-TAM-cancer/esca/plot_data.csv", row.names=1)
+
+an = read.csv("/public/home/yuwenqi/sc-data/selected/append_ana/subTME-heatmap-TAM-cancer/esca/an.csv", row.names = 1)
+
 bk <- c(seq(min(data), -0.001, (0 - min(data)) / 100),seq(0, max(data), (max(data) - 0.001) / 100))
 
 heatmap = pheatmap(data, 
                    #annotation_row = annotation, # ?????????????????????????????????
                    annotation_col=an, # ?????????????????????????????????
-                   #show_colnames = TRUE, # ??????????????????
+                   show_colnames = F, # ??????????????????
                    #show_rownames=TRUE,  # ??????????????????
-                   fontsize=15, # ????????????
+                   fontsize= 10, # ????????????
                    breaks = bk,
                    color = c(colorRampPalette(c("#0c00e6"))(length(bk) / 4), colorRampPalette(c("#0c00e6","#FFFFFF"))(length(bk) / 4), colorRampPalette(colors=c('#FFFFFF', '#e00000'))(length(bk) / 4), colorRampPalette(colors=c('#e00000'))(length(bk) / 4)), # ?????????????????????
                    #color = colorRampPalette(c("#FFFFFF","#e00000"))(100),
@@ -18,17 +20,17 @@ heatmap = pheatmap(data,
                    cluster_cols = FALSE, # ??????????????????
                    legend_breaks = c(min(data), 0, max(data) - 0.01),
                    legend_labels = c(round(min(data), 1),0,round(max(data) - 0.01, 1)),
-                   cellheight = 26,
-                   cellwidth = 26,
+                   cellheight = 12,
+                   cellwidth = 4,
                    angle_col = 45,
-                   fontsize_col = 15,
-                   fontsize_row =15,
+                   fontsize_col = 10,
+                   fontsize_row = 10,
                    #gaps_row = c(5,9, 15, 19, 21, 24, 25)
                    #gaps_row = 1:length(rownames(data)),
                    #gaps_col = c(4, 8, 12, 16)
                    
 )
 
-pdf("/public/home/yuwenqi/sc-data/selected/subTME_heatmap/ESCA/plot/crc_heatmap_all.pdf", width = 46, height = 35)
+pdf("/public/home/yuwenqi/sc-data/selected/append_ana/subTME-heatmap-TAM-cancer/esca/esca_heatmap_TAM.pdf", width = 10 , height = 10)
 heatmap
 dev.off()
