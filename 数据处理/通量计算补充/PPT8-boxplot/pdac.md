@@ -7,31 +7,58 @@ write.csv(as.matrix(scRNA[genes, ]@assays$RNA@data), "/public/home/yuwenqi/sc-da
 ```python
 meta = pd.read_csv("/public/home/yuwenqi/sc-data/selected/35/all2.csv", index_col=0)
 meta_t = meta.loc[meta['sample'].str.contains('T')]
-df = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT7-boxplot/pdac/SLC1A3_df.csv", index_col = 0).T
-df = df.loc[meta_t.index, ]
-df['ident'] = meta_t['ident']
+major = meta.loc[meta.ident == 'Macro_APOE'].index
 
-# get Epi、Mye、TNK
-df.loc[meta_t[~meta_t.cluster.isin(['Epi', 'Mye', 'TNK'])].index, 'ident'] = meta_t.cluster
-df.to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT7-boxplot/pdac/SLC1A3_diff.csv")
+df = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT8-boxplot/pdac/gene_df.csv", index_col = 0).T
+df_use = df.loc[major, ['SLC1A3', 'GLUL', 'SLC1A5', 'SLC38A1', 'GLS', 'GLUD1', 'OGDH', 'SUCLG1', 'GGT7', 'GGT5', 'GSS']]
+basic_type = pd.read_csv("/public/home/yuwenqi/sc-data/selected/35/module/cluster_sg_scores/s_celltype_gene_type.csv", index_col = 0)
+basic_grade = pd.read_csv("/public/home/yuwenqi/sc-data/selected/35/module/cluster_sg_scores/s_celltype_gene_tumor.csv", index_col = 0)
+meta['type'] = basic_type.loc[meta['sample']].type.values
+df_use['type'] = meta.loc[df_use.index, 'type']
+df_use.to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT8-boxplot/pdac/gene_plotdata_type.csv")
+# meta_t = meta.loc[df_use.loc[df_use.type == 'tumor'].index, ]
+# df_use2 = df_use.loc[meta_t.index, ]
+# df_use2['grade'] = basic_grade.loc[meta_t['orig.ident']].grade.values
+# df_use2['grade'] = df_use2['grade'].replace('grade1&2', 'Low')
+# df_use2['grade'] = df_use2['grade'].replace('grade3', 'High')
+# df_use2.to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT8-boxplot/pdac/gene_plotdata_grade.csv")
+
+df_use2 = df_use.loc[df_use.type == 'Tumor']
+df_use2['grade'] = basic_grade.loc[meta.loc[df_use2.index, 'sample']].stage.values
+#df_use2['grade'] = df_use2['grade'].replace('grade1&2', 'Low')
+#df_use2['grade'] = df_use2['grade'].replace('grade3', 'High')
+df_use2.to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT8-boxplot/pdac/gene_plotdata_grade.csv")
 
 sct = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/module-an/pdac/sct.csv", index_col = 0)
-sct = sct.loc[meta_t.index, ['M_48', 'M_25', 'M_26']]
-sct['ident'] = meta_t['ident']
-sct.loc[meta_t[~meta_t.cluster.isin(['Epi', 'Mye', 'TNK'])].index, 'ident'] = meta_t.cluster
-sct.to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT7-boxplot/pdac/module_diff.csv")
+scn = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/module-an/pdac/scn.csv", index_col = 0)
+sc = pd.concat([sct, scn])
+
+sc = sc.loc[major, ['M_48']]
+#meta['type'] = basic_type.loc[meta['orig.ident']].type.values
+sc['type'] = meta.loc[sc.index, 'type']
+sc.to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT8-boxplot/pdac/sc_plotdata_type.csv")
+
+sc2 = sc.loc[sc.type == 'Tumor']
+sc2['grade'] = basic_grade.loc[meta.loc[sc2.index, 'sample']].stage.values
+#sc2['grade'] = sc2['grade'].replace('grade1&2', 'Low')
+#sc2['grade'] = sc2['grade'].replace('grade3', 'High')
+sc2.to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT8-boxplot/pdac/sc_plotdata_grade.csv")
 
 
-metabolism = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/module-an/pdac/metabolism_t.csv", index_col = 0)
-metabolism = metabolism.loc[meta_t.index, ['Glutamate', 'Glutamine']]
-metabolism['ident'] = meta_t['ident']
-metabolism.loc[meta_t[~meta_t.cluster.isin(['Epi', 'Mye', 'TNK'])].index, 'ident'] = meta_t.cluster
-metabolism.to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT7-boxplot/pdac/metabolism_diff.csv")
+metabolism_t = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/module-an/pdac/metabolism_t.csv", index_col = 0)
+metabolism_n = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/module-an/pdac/metabolism_n.csv", index_col = 0)
+metabolism = pd.concat([metabolism_t, metabolism_n])
+metabolism = metabolism.loc[major, ['Glutamine']]
+#meta['type'] = basic_type.loc[meta['orig.ident']].type.values
+metabolism['type'] = meta.loc[metabolism.index, 'type']
+metabolism.to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT8-boxplot/pdac/metabolism_plotdata_type.csv")
 
-set(meta_t.loc[meta_t.cluster == 'Epi'].ident)
-set(meta_t.loc[meta_t.cluster == 'Mye'].ident)
-set(meta_t.loc[meta_t.cluster == 'TNK'].ident)
-set(meta_t.cluster)
+
+metabolism2 = metabolism.loc[metabolism.type == 'Tumor']
+metabolism2['grade'] = basic_grade.loc[meta.loc[metabolism2.index, 'sample']].stage.values
+# metabolism2['grade'] = metabolism2['grade'].replace('grade1&2', 'Low')
+# metabolism2['grade'] = metabolism2['grade'].replace('grade3', 'High')
+metabolism2.to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT8-boxplot/pdac/metabolism_plotdata_grade.csv")
 ```
 
 ```R
