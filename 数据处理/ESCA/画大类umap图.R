@@ -19,7 +19,7 @@ meta = read.csv("/public/home/yuwenqi/sc-data/selected/9/plot_used.csv", row.nam
 scRNA = scRNA[, rownames(meta)]
 scRNA[['cluster']] =  meta$cluster
 scRNA[['type']] = meta$type
-scRNA$type <- factor(scRNA$type,levels = c("Tumor","Normal"))
+scRNA$tyctor(scRNA$type,pe <- falevels = c("Tumor","Normal"))
 p1 <- DimPlot(scRNA, label = T, pt.size = 1, group.by='cluster')+
   NoLegend()+labs(title = "Cluster") +
   theme(panel.border = element_rect(fill=NA,color="black", size=1, linetype="solid"),

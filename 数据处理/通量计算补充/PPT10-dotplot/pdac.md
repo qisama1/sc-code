@@ -8,15 +8,20 @@ write.csv(as.matrix(scRNA[genes, ]@assays$RNA@data), "/public/home/yuwenqi/sc-da
 import pandas as pd
 meta = pd.read_csv("/public/home/yuwenqi/sc-data/selected/35/all2.csv", index_col=0)
 meta_t = meta.loc[meta['sample'].str.contains('T')]
-major1 = meta_t.loc[meta_t.ident == 'Macro_APOE'].index
-major2 = meta_t.loc[meta_t.cluster == 'Epi'].index
+major = meta_t.loc[meta_t.ident.str.contains('Macro')].index
 
-df = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT9-boxplot/pdac/gene_df.csv", index_col = 0).T
-df_use1 = df.loc[major1, ['SLC1A3', 'GLUL', 'SLC1A5', 'SLC38A1', 'GLS', 'GLUD1', 'OGDH' , 'SUCLG1', 'GGT6', 'GGT1', 'GGT7', 'GGT5']]
-df_use2 = df.loc[major2, ['SLC1A3', 'GLUL', 'SLC1A5', 'SLC38A1', 'GLS', 'GLUD1', 'OGDH' , 'SUCLG1', 'GGT6', 'GGT1', 'GGT7', 'GGT5']]
-df_use1['type'] = 'Macro_SPP1_APOE'
-df_use2['type'] = 'Tumor cell'
-pd.concat([df_use1, df_use2]).to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT9-boxplot/pdac/plot_data.csv")
+sct = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/module-an/pdac/sct.csv", index_col = 0)
+metabolism = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/module-an/pdac/metabolism_t.csv", index_col = 0)
+gsva = pd.read_csv("/public/home/yuwenqi/sc-data/selected/35/module/cci_an_sheet/gsva_score/all2.csv", index_col = 0).T
+df = pd.read_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT10-dotplot/pdac/gene_df.csv", index_col = 0).T
+
+df = df.loc[major, ['GLUL', 'GSS', 'GGT6', 'GGT1', 'GGT7', 'GGT5']]
+sct = sct.loc[major, ['M_48', 'M_25', 'M_26']]
+metabolism = metabolism.loc[major, ['Glutamine']]
+gsva = gsva.loc[major, ['M2 Macrophage Polarization', 
+'Anti-inflammatory in myeloid cells']]
+gsva.columns = ['M2', 'Anti.inflammatory']
+pd.concat([df, sct, metabolism, gsva], axis = 1).to_csv("/public/home/yuwenqi/sc-data/selected/append_ana/pathway_appends/PPT10-dotplot/pdac/plot_data.csv")
 ```
 
 ```R

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="78105800-fdb9-4740-8671-ff829928fa9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/10x流程/process.R" beforeDir="false" afterPath="$PROJECT_DIR$/10x流程/process.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCI/cellchat/post-process/分离P和V.py" beforeDir="false" afterPath="$PROJECT_DIR$/CCI/cellchat/post-process/分离P和V.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据处理/BRCA/subTME_heatmap/heatmap.R" beforeDir="false" afterPath="$PROJECT_DIR$/数据处理/BRCA/subTME_heatmap/heatmap.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据处理/CRC/CCI_res/t-2-OS.R" beforeDir="false" afterPath="$PROJECT_DIR$/数据处理/CRC/CCI_res/t-2-OS.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据处理/ESCA/画大类umap图.R" beforeDir="false" afterPath="$PROJECT_DIR$/数据处理/ESCA/画大类umap图.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据处理/PDAC/append_ana/gene_expr_corr/heatmap.R" beforeDir="false" afterPath="$PROJECT_DIR$/数据处理/PDAC/append_ana/gene_expr_corr/heatmap.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据处理/细胞比例热图多个热图copy.R" beforeDir="false" afterPath="$PROJECT_DIR$/数据处理/细胞比例热图多个热图copy.R" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据处理/通量计算补充/PPT10-dotplot/bc.md" beforeDir="false" afterPath="$PROJECT_DIR$/数据处理/通量计算补充/PPT10-dotplot/bc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据处理/通量计算补充/PPT10-dotplot/esca.md" beforeDir="false" afterPath="$PROJECT_DIR$/数据处理/通量计算补充/PPT10-dotplot/esca.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据处理/通量计算补充/PPT10-dotplot/pdac.md" beforeDir="false" afterPath="$PROJECT_DIR$/数据处理/通量计算补充/PPT10-dotplot/pdac.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据处理/通量计算补充/PPT11-corrplot/bc.md" beforeDir="false" afterPath="$PROJECT_DIR$/数据处理/通量计算补充/PPT11-corrplot/bc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据处理/通量计算补充/PPT11-corrplot/esca.md" beforeDir="false" afterPath="$PROJECT_DIR$/数据处理/通量计算补充/PPT11-corrplot/esca.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据处理/通量计算补充/PPT11-corrplot/pdac.md" beforeDir="false" afterPath="$PROJECT_DIR$/数据处理/通量计算补充/PPT11-corrplot/pdac.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file://F:/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2YjsYZjgLA69DESH58hrXIMeq9e" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "D:/研究生/singleCell/workspace/code-summary"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

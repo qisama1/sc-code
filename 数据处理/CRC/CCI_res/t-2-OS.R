@@ -17,10 +17,7 @@ lapply(fs, function(x) {
 os_plot = function(data, filename, marker, data2) {
     clinical = data
     clinical_trait <- clinical  %>%
-    dplyr::select(X,gender,vital_status,                            
-                    days_to_death,days_to_last_followup,
-                    person_neoplasm_cancer_status,age_at_initial_pathologic_diagnosis,
-                    laterality,neoplasm_histologic_grade,pathologic_stage) %>%
+    dplyr::select(X,C) %>%
     distinct(X, .keep_all = TRUE)  
 
     #整理死亡患者的临床信息

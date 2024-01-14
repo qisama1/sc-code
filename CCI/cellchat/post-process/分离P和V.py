@@ -7,5 +7,3 @@ for i in range(len(d)):
     idx = cur.ligand + '|' + cur.receptor
     col = cur.source + '|' + cur.target
     if (cur.pval <= 0.05): res.loc[idx, col] = cur.prob
-
-pd.DataFrame(list(set(res.index.str.split('|').str[0]) | set(res.index.str.split('|').str[1])))

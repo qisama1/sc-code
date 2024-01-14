@@ -1,6 +1,6 @@
 data = read.csv("/public/home/yuwenqi/sc-data/selected/append_ana/4-12-tcga_heatmap-2/PDAC/heatmap_data.csv", row.names=1)
 an = read.csv("/public/home/yuwenqi/sc-data/selected/append_ana/4-12-tcga_heatmap-2/PDAC/an.csv", row.names = 1)
-bk <- c(seq(min(data), -0.001, (0 - min(data)) / 100),seq(0, max(data), (max(data) - 0.001) / 100))
+bk <- c(seq(min(data), -0.001, (0 - min(data)) / 1000),seq(0, max(data), (max(data) - 0.001) / 1000))
 colnames(data) = rownames(an)
 heatmap = pheatmap(data, 
                    #annotation_row = annotation, # ?????????????????????????????????
@@ -9,7 +9,7 @@ heatmap = pheatmap(data,
                    #show_rownames=TRUE,  # ??????????????????
                    fontsize=15, # ????????????
                    breaks = bk,
-                   color = c(colorRampPalette(c("#0c00e6"))(length(bk) / 4), colorRampPalette(c("#0c00e6","#FFFFFF"))(length(bk) / 4), colorRampPalette(colors=c('#FFFFFF', '#e00000'))(length(bk) / 4), colorRampPalette(colors=c('#e00000'))(length(bk) / 4)), # ?????????????????????
+                   color = c(colorRampPalette(c("#0c00e6"))(length(bk) / 4), colorRampPalette(c("#0c00e6","#FFFFFF"))(length(bk) / 4), colorRampPalette(colors=c('#FFFFFF', '#e00000'))(length(bk) * 1 / 4), colorRampPalette(colors=c('#e00000'))(length(bk) * 1 / 4)), # ?????????????????????
                    #color = colorRampPalette(c("#FFFFFF","#e00000"))(100),
                    annotation_legend=TRUE, # ??????????????????
                    border_color=NA,  # ???????????? NA????????????
